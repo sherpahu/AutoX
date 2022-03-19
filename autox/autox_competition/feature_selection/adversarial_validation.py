@@ -106,7 +106,10 @@ class AdversarialValidation:
             feature_importances.head()
 
             if mean_auc > p:
-                cur_removed_features = [feature_importances.loc[0, 'feature'],feature_importances.loc[1, 'feature'],feature_importances.loc[2, 'feature']]
+                #cur_removed_features = [feature_importances.loc[0, 'feature'],feature_importances.loc[1, 'feature'],feature_importances.loc[2, 'feature']]
+                cur_removed_features = []
+                for idx in range(10):
+                    cur_removed_features.append(feature_importances.loc[idx, 'feature'])
                 self.removed_features+=cur_removed_features
                 not_used = not_used + cur_removed_features
                 used_features = [x for x in test.columns if x not in not_used]
