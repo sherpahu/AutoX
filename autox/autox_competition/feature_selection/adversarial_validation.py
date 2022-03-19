@@ -35,7 +35,7 @@ class AdversarialValidation:
         test[target] = 1
         train_test = pd.concat([train, test], axis=0)
 
-        n_fold = 5
+        n_fold = 1
         folds = KFold(n_splits=n_fold, shuffle=True, random_state=889)
 
         lr = 0.1
