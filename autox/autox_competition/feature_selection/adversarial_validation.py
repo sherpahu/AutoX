@@ -92,6 +92,7 @@ class AdversarialValidation:
                 log('AUC: {}'.format(auc_score))
                 AUCs.append(auc_score)
                 log('Fold {} finished in {}'.format(fold_n + 1, str(datetime.timedelta(seconds=time() - start_time))))
+                break
 
             log(AUCs)
             mean_auc = np.mean(AUCs)
